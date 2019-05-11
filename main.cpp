@@ -8,7 +8,7 @@
 * elements.
 *
 * Notes:
-*  (1) STL Hash returns std:size_t, so it’s a 32-bit value on a 32-bit 
+*  (1) STL Hash returns std:size_t, so itâ€™s a 32-bit value on a 32-bit 
 *      system, and a 64-bit value on a 64-bit system.
 *  (2) Compiled/tested with MS Visual Studio 2017 Community (v141), and
 *      Windows SDK version 10.0.17134.0 (32 & 64-bit).
@@ -21,11 +21,6 @@
 #include <string>    // strings
 #include "block.h"   // blockchain
 #include "list.h"    // my version of a singly-linked list
-
-#ifdef _DEBUG
-// Visual Leak Detector for debug build. https://kinddragon.github.io/vld/
-#include "C:\Program Files (x86)\Visual Leak Detector\include\vld.h"
-#endif
 
 // Demo blockchain size.
 constexpr std::size_t BLOCKCHAIN_SIZE{ 100 };
