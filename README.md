@@ -1,4 +1,4 @@
 # Blockchain
-## Constructs simple blockchain.
+## Constructs simple demonstartion of a blockchain.
 
 Generates a blockchain of 100 mined elements.
