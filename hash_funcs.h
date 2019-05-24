@@ -4,14 +4,14 @@
 * Author: James Eli
 * Date: 11/12/2018
 *
-* Collection of 3 public domain 32-bit hash functions:
+* Library of 3 public domain 32-bit hash functions and the STL hash:
 *   C++ STL Hash function.
 *   FNV-1a 32-bit hash function.
 *   CRC32 32-bit cyclic redundancy check.
 *   SDBM 32-bit function.
 *
 * Notes:
-*  (1) The STL library hash function and 2 alternative functions are 
+*  (1) The STL library hash function and 3 alternative functions are 
 *      provided. Additional information can be found below.
 *  (2) Compiled/tested with MS Visual Studio 2017 Community (v141), and
 *      Windows SDK version 10.0.17134.0
@@ -36,9 +36,15 @@ uint32_t fnv1a_32(std::string);
 uint32_t crc_32(std::string);
 uint32_t sdbm_32(std::string);
 
-// Hash class with FNV1a algorithm as default function.
+// Our hash class with FNV1a algorithm as default function.
 template <HashFunc hf = fnv1a_32>
-struct Hash { uint32_t hashString(std::string s) { return hf(s); } };
+struct Hash 
+{ 
+	uint32_t hashString(std::string s) 
+	{ 
+		return hf(s); 
+	} 
+};
 
 /*************************************************************************
  * C++ STL <functional> library hash function.
@@ -52,7 +58,7 @@ uint32_t stl_32(std::string key)
 }
 
 /*************************************************************************
- * Fowler–Noll–Vo is a non-cryptographic hash function created by Glenn 
+ * Fowlerâ€“Nollâ€“Vo is a non-cryptographic hash function created by Glenn 
  * Fowler, Landon Curt Noll, and Kiem-Phong Vo. The FNV hash was designed 
  * for fast hash table and checksum use, not cryptography. The core of the 
  * FNV-1a hash algorithm is as follows:
@@ -95,7 +101,7 @@ uint32_t fnv1a_32(std::string key)
 }
 
 /*************************************************************************
- * CRC-32 implementation researched in the paper, "Reversing CRC–Theory 
+ * CRC-32 implementation researched in the paper, "Reversing CRCâ€“Theory 
  * and Practice", Stigge, Plotz, etal. May 2006. Copy located here:
  * http://stigge.org/martin/pub/SAR-PR-2006-05.pdf
  * Additional information, including table generation found in the 
