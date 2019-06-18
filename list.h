@@ -1,3 +1,4 @@
+// Basic singly linked list without error checking.
 #ifndef _SMART_LIST_H_
 #define _SMART_LIST_H_
 
@@ -49,7 +50,7 @@ public:
 	T& front() const { return head->element; }
 
 	void push_back(const T& e) 
-	{	// Add to tail of list. 
+	{
 		auto newNode{ std::make_shared<node<T>>(e) };
 		if (!head)
 			head = newNode;
@@ -59,7 +60,7 @@ public:
 	}
 
 	void push_front(const T& e) 
-	{	// Add to head of list. 
+	{
 		auto newNode{ std::make_shared<node<T>>(e) };
 		if (!tail)
 			tail = newNode;
@@ -68,7 +69,7 @@ public:
 	}
 
 	void pop_front() 
-	{	// Remove node from head of list.
+	{
 		if (empty())
 			return;
 		if (tail == head)
@@ -80,4 +81,3 @@ public:
 };
 
 #endif
-
