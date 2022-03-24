@@ -31,11 +31,7 @@
 #include "hash_funcs.h"
 
 // All but hash ctor.
-Block::Block(
-	const unsigned long i, // id
-	std::string ph,        // previous hash
-	const unsigned long n  // nonce
-) : id(i), nonce(n), previousHash(ph)
+Block::Block(const unsigned long i, /* id */	std::string ph, /* previous hash */ const unsigned long n /* nonce */) : id(i), nonce(n), previousHash(ph)
 {
 	setTimeID(timeStamp());
 	setHash(std::to_string(calcHash()));
